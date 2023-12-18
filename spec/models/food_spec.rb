@@ -3,8 +3,13 @@ RSpec.describe Food, type: :model do
   @user = User.create(name: 'Amos')
   subject { Food.new(name: 'onions', quantity: 3, price: 1, measurement_unit: 'kg', user_id: @user) }
   before { subject.save }
-  it 'name should be present' do
+  it 'name should be present have some inclusion' do
     subject.name = nil
+    expect(subject).to_not be_valid
+  end
+
+  it 'name should be present have some inclusion' do
+    subject.measurement_unit = 'water'
     expect(subject).to_not be_valid
   end
 
