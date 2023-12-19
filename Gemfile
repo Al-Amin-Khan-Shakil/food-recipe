@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.2.2'
+ruby '3.0.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.2'
@@ -50,6 +50,8 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
+
+  # This gem is used to run the rspec to do testing
   gem 'rspec-rails'
 end
 
@@ -69,4 +71,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+# controller testing gem
 gem 'rails-controller-testing'
