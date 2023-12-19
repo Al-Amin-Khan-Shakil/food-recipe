@@ -1,0 +1,14 @@
+<section class = "recipes-section">
+  <ul class = "recipes-list">
+  <% @recipes.each do |recipe| %>
+    <li class = "recipe-list">
+    <%= link_to recipe_path(recipe), class: "recipe-link" do %>
+      <h1 class="recipe-name"><%= recipe.name %></h1>
+      <p class="recipe-description"><%= recipe.description %></p>
+    <% end %>
+    <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: "remove-button" %>
+    </li>
+  <% end %>
+  </ul>
+</section>
+    
