@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.2'
@@ -74,3 +74,6 @@ end
 
 # controller testing gem
 gem 'rails-controller-testing'
+
+# Gem to fix the n+1 queri problem
+gem 'bullet', group: :development
