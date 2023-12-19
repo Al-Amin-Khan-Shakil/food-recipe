@@ -1,0 +1,24 @@
+<div class="form-wrapper">
+    <h2>New Food</h2>
+    <%= form_with model: food, url: foods_url, method: :post, local: true, scope: :food do |f| %>
+        <div class="form-item">
+            <%= f.label :Name %><br>
+            <%= f.text_field :name %>
+        </div>
+        <div class="form-item">
+            <%= f.label :Measurement_unit %><br>
+            <%= f.text_field :measurement_unit %>
+        </div>
+        <div class="form-item">
+            <%= f.label :Price %><br>
+            <%= f.text_field :price %>
+        </div>
+        <div class="form-item">
+            <%= f.label :Quantity %><br>
+            <%= f.text_field :quantity %>
+        </div>
+
+        <%= f.submit "Add Food" %>
+    <% end %>
+      
+</div>
