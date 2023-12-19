@@ -1,0 +1,26 @@
+<div class="btn-link">
+  <%=link_to "Add Food", newfood_path, class:"seelink"%> 
+</div>
+<div class="table-wrapper">
+    <table>
+    <tr>
+        <th class="border-remover">Food</th>
+        <th class="border-remover ">Measurement unit</th>
+        <th class="border-remover">Unit price</th>
+        <th class="border-remover">Quantity</th>
+        <th>Actions</th>
+    </tr>
+    <% @foods.each do |food| %>
+        <tr>
+            <td class="border-remover border-top-remover"><%=food.name%></td>
+            <td class="border-remover border-top-remover"><%=food.measurement_unit%></td>
+            <td class="border-remover border-top-remover">$<%=food.price%></td>
+            <td class="border-remover border-top-remover"><%=food.quantity%></td>
+            <td class="border-top-remover">
+              <%= button_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure you want to delete this food item?' }, class: 'delete-button' %>
+            </td>
+    </tr>
+    <%end%>
+
+    </table>
+</div>

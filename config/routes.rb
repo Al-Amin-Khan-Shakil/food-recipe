@@ -15,4 +15,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "/foods", to: "foods#index", as: "foods" 
+  get "/foods/new", to: "foods#new", as: "newfood"
+  post "/foods", to: "foods#create"
+  delete "/foods/:id", to: "foods#destroy", as: "food"
 end
