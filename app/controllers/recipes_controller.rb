@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipe
-    @public_recipes = Recipe.public_recipe.includes(recipe_foods: :user)
+    @public_recipes = Recipe.public_recipe.includes(:recipe_foods, :user)
     @public_recipes.each do |recipe|
       calculation_result = recipe.calculate_total_cost_and_food_count
       recipe.total_cost = calculation_result[:total_cost]
