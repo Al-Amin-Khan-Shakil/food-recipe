@@ -25,11 +25,11 @@ class FoodsController < ApplicationController
   end
 
   def index
-    @foods = Food.all
+    @foods = current_user.foods
   end
 
   def destroy
-    @food = Food.find(params[:id])
+    @food = current_user.foods.find(params[:id])
     @food.destroy
     flash[:success] = 'Food deleted successfully'
     redirect_to foods_url
