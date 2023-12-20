@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
 /* add toggle switch style */
+
 /* app/assets/stylesheets/application.css */
 .toggle-button-wrapper {
   display: flex;
@@ -34,16 +36,16 @@
   position: relative;
 }
 
-#toggle-public-button:before {
+#toggle-public-button::before {
   content: '';
   width: 30px;
   height: 30px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   position: absolute;
   transition: 0.3s;
 }
 
-#toggle-public-form:checked + #toggle-public-button:before {
+#toggle-public-form:checked + #toggle-public-button::before {
   transform: translateX(30px);
 }
 
