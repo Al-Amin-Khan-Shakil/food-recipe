@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+/* add toggle switch style */
+/* app/assets/stylesheets/application.css */
+.toggle-button-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#toggle-public-form {
+  
+}
+
+#toggle-public-button {
+  width: 60px;
+  height: 30px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+#toggle-public-button:before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-color: #4CAF50;
+  position: absolute;
+  transition: 0.3s;
+}
+
+#toggle-public-form:checked + #toggle-public-button:before {
+  transform: translateX(30px);
+}
+
+.toggle-label {
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+}
