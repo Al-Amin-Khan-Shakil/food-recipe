@@ -14,12 +14,12 @@ class RecipesController < ApplicationController
     redirect_to recipes_path, notice: 'Recipe successfully deleted.'
   end
 
-
   def toggle_public
     @recipe = Recipe.find(params[:id])
     @recipe.update(public: !@recipe.public)
     redirect_to @recipe, notice: 'Recipe public status toggled.'
   end
+
   def public_recipe
     @public_recipes = Recipe.public_recipe.includes(recipe_foods: :user)
     @public_recipes.each do |recipe|
