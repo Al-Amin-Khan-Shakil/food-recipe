@@ -1,0 +1,24 @@
+<div class="shopping-wrapper">
+    <h2>Shopping List</h2>
+    <div class="valuation-wrapper">
+        <p>Amount of Food Items to buy:<%=@shopping_list[:total_food_items]%></p>
+        <p>Total value of food needed:$<%=@shopping_list[:total_cost]%></p>
+    </div
+</div>
+<div class="table-wrapper">
+    <table>
+    <tr>
+        <th class="border-remover">Food</th>
+        <th class="border-remover ">Quantity</th>
+        <th >Price</th>
+    </tr>
+    <% @shopping_list[:missing_food_quantities].each do |food, info| %>
+        <tr>
+            <td class="border-remover border-top-remover"><%=info[:food_name]%></td>
+            <td class="border-remover border-top-remover">$<%=info[:total_cost]%></td>
+            <td class="border-remover border-top-remover"><%=info[:missing_quantity]%></td>
+        </tr>
+    <%end%>
+
+    </table>
+</div
