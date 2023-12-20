@@ -1,6 +1,7 @@
 body {
-  background: linear-gradient(to right, #e66465, white);
+  background: linear-gradient(135deg, #e66465, white);
   color: black;
+  min-height: 100vh;
 }
 
 .table-wrapper {
