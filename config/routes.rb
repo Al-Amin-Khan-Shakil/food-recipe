@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   root "recipes#index"
   resources :recipes, except: [:edit, :update] do
-    resources :recipe_foods, only: [:index, :new, :create, :destroy]
+    resources :recipe_foods, only: [:new, :create, :destroy, :edit, :update]
+    member do
+      patch 'toggle_public'
+    end
   end
 
   get '/public_recipes', to: 'recipes#public_recipe', as: 'public_recipes'
