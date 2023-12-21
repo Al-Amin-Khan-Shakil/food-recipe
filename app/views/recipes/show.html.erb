@@ -16,8 +16,8 @@
     </div>
   </div>
   <div class="button-section">
-    <%= link_to 'Generat shopping list', general_shopping_list_path, class: "generat-shopping-list" %>
-    <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe), class: "add-ingredient" %>
+    <%= link_to 'Generate Shopping List', general_shopping_list_path, class: "generat-shopping-list" %>
+    <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "add-ingredient" %>
   </div>
   <div class="ingredients">  
     <table>
@@ -34,10 +34,10 @@
         <% @recipe.recipe_foods.each do |recipe_food| %>
           <tr>
             <td><%= recipe_food.food.name %></td>
-            <td><%= recipe_food.quantity %></td>
-            <td><%= recipe_food.quantity * recipe_food.food.price %></td>
-            <td><%= link_to 'Modify', edit_recipe_recipe_food_path(@recipe, recipe_food) %></td>
-            <td><%= button_to 'Delete', recipe_recipe_food_path(@recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+            <td> $<%= recipe_food.quantity * recipe_food.food.price %></td>
+            <td><%= link_to 'Modify', edit_recipe_recipe_food_path(@recipe, recipe_food), class: "modify-button" %></td>
+            <td><%= button_to 'Delete', recipe_recipe_food_path(@recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class: "ingre-delete-button" %></td>
           </tr>
         <% end %>
       </tbody>
