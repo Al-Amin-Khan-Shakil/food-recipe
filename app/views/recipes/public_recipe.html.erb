@@ -6,10 +6,10 @@
                 <div>
                     <h3><%=recipe.name%></h3>
                     <p>By:<%=recipe.user.name%></p>
+                    <% if can?(:destroy, recipe) %>
+                        <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: "remove-button" %>
+                    <% end %>
                 </div>
-                <% if can?(:destroy, recipe) %>
-                    <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: "remove-button" %>
-                <% end %>
                 <div>
                     <p>Total food items:<%=recipe.food_count%></p>
                     <p>Total price:<%=recipe.total_cost%></p>
