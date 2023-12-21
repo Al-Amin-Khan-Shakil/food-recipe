@@ -64,7 +64,7 @@
 }
 
 #toggle-public-form {
-  display: none;
+  display: block;
 }
 
 .button-section {
@@ -100,7 +100,8 @@ table {
   margin-top: 20px;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;

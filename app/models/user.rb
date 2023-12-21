@@ -4,17 +4,19 @@ class User < ApplicationRecord
   has_many :foods
   has_many :recipe_foods, through: :recipes
   def general_shopping_list
-    required_food_quantitie = calculate_required_food_quantities
+    calculate_required_food_quantities
     user_food_quantities = calculate_user_food_quantities(required_food_quantities.keys)
     missing_food_quantitie = calculate_missing_food_quantities(required_food_quantities, user_food_quantities)
     {
-      missing_food_quantities:missing_food_quantitie,
+      missing_food_quantities: missing_food_quantitie,
       total_quantity: missing_food_quantitie.values.sum { |info| info[:missing_quantity] },
       total_cost: missing_food_quantitie.values.sum { |info| info[:total_cost] },
       total_food_items: missing_food_quantitie.keys.size
     }
   end
+
   private
+
   def calculate_required_food_quantities
     recipes = Recipe.where(user: self)
     required_food_quantities = Hash.new(0)
@@ -25,6 +27,7 @@ class User < ApplicationRecord
     end
     required_food_quantities
   end
+
   def calculate_user_food_quantities(foods)
     user_food_quantities = Hash.new(0)
     recipe_foods.each do |user_recipe_food|
@@ -34,13 +37,14 @@ class User < ApplicationRecord
     end
     user_food_quantities
   end
+
   def calculate_missing_food_quantities(required_food_quantities, user_food_quantities)
     missing_food_quantities = {}
     required_food_quantities.each do |food, required_quantity|
       user_quantity = user_food_quantities[food]
       missing_quantit = [required_quantity - user_quantity, 0].max
       missing_food_quantities[food] = {
-        missing_quantity:missing_quantit,
+        missing_quantity: missing_quantit,
         total_cost: missing_quantit * food.price,
         food_name: food.name
       }

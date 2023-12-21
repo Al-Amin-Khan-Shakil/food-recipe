@@ -22,6 +22,6 @@ class Recipe < ApplicationRecord
       food_count += 1
     end
 
-    { total_cost: total_cost, food_count: food_count }
+    { total_cost:, food_count: }
   end
 end
