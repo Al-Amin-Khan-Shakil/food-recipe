@@ -10,7 +10,6 @@ RSpec.describe RecipeFood, type: :model do
   end
 
   it 'should be valid' do
-    p @recipe_food
     expect(@recipe_food).to be_valid
   end
 
