@@ -40,7 +40,7 @@ tr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   justify-content: center;
 }
 
@@ -76,3 +76,46 @@ a.seelink {
 a.seelink:hover {
   transform: scale(1.05);
 }
+
+.food-form {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.form-item {
+  margin-bottom: 1rem;
+}
+
+.label-name,
+.label-measurement-unit,
+.label-price,
+.label-quantity {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-name,
+.input-measurement-unit,
+.input-price,
+.input-quantity {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
