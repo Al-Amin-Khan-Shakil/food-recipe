@@ -1,0 +1,48 @@
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background: white;
+  width: 450px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field > input {
+  padding: 65px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  outline: none;
+  border: 1px #e66465 solid;
+  border-radius: 5px;
+}
+
+.actions > input {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: lightgreen;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  border: none;
+}
+
+.login-form-wrapper > a {
+  color: red;
+  text-decoration: none;
+  font-weight: lighter;
+  margin-top: 2px;
+}

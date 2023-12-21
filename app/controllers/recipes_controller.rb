@@ -43,14 +43,14 @@ class RecipesController < ApplicationController
     end
   end
 
+  def general_shopping_list
+    @user = current_user
+    @shopping_list = @user.general_shopping_list
+  end
+
   private
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
-  end
-
-  def general_shopping_list
-    @user = current_user
-    @shopping_list = @user.general_shopping_list
   end
 end
