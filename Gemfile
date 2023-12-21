@@ -77,3 +77,4 @@ gem 'rails-controller-testing'
 
 # Gem to fix the n+1 queri problem
 gem 'bullet', group: :development
+gem 'devise'

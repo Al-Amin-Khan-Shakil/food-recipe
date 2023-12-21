@@ -67,10 +67,13 @@ button.delete-button:hover {
 }
 
 a.seelink {
+  margin-top: 20px;
+  margin-bottom: 40px;
   text-decoration: none;
   padding: 8px;
   background: lightgreen;
   border-radius: 5px;
+  color: white;
 }
 
 a.seelink:hover {
