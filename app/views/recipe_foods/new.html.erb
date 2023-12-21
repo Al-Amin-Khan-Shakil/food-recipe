@@ -8,7 +8,7 @@
 
   <div>
     <%= form.label :food_id %>
-    <%= form.collection_select :food_id, Food.all, :id, :name %>
+    <%= form.collection_select :food_id, current_user.foods, :id, :name %>
   </div>
 
   <div>

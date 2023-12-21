@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, Recipe
     @recipe = Recipe.find(params[:id])
     @recipe.recipe_foods.destroy_all
     @recipe.destroy!
