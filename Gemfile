@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.2.2'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.2'
@@ -77,4 +77,9 @@ gem 'rails-controller-testing'
 
 # Gem to fix the n+1 queri problem
 gem 'bullet', group: :development
+
+# Gem to login and sign up authentication
 gem 'devise'
+
+# Gem to give authorization
+gem 'cancancan'

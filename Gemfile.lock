@@ -88,6 +88,7 @@ GEM
     bullet (7.1.4)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
+    cancancan (3.5.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -306,6 +307,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bullet
+  cancancan
   capybara
   debug
   devise
@@ -325,7 +327,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.4.22
