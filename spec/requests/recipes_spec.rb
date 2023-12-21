@@ -98,12 +98,14 @@ RSpec.describe 'Recipes', type: :request do
     it 'should include the placeholder' do
       get new_recipe_path
       expect(response.body).to include('New Recipe')
-    end  
+    end
   end
 
   describe 'POST /create' do
     it 'should create a new recipe' do
-      post recipes_path, params: { recipe: { name: 'New Recipe', preparation_time: '30 mins', cooking_time: '1 hour', description: 'Delicious dish', public: true } }
+      post recipes_path,
+           params: { recipe: { name: 'New Recipe', preparation_time: '30 mins', cooking_time: '1 hour',
+                               description: 'Delicious dish', public: true } }
       expect(response).to have_http_status(:found)
       expect(response).to redirect_to(assigns(:recipe))
       follow_redirect!
@@ -112,7 +114,8 @@ RSpec.describe 'Recipes', type: :request do
     end
 
     it 'should render new template on invalid data' do
-      post recipes_path, params: { recipe: { name: '', preparation_time: '', cooking_time: '', description: '', public: true } }
+      post recipes_path,
+           params: { recipe: { name: '', preparation_time: '', cooking_time: '', description: '', public: true } }
       expect(response).to have_http_status(:ok)
       expect(response).to render_template(:new)
     end
