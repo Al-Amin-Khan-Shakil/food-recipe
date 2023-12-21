@@ -17,7 +17,7 @@ class Recipe < ApplicationRecord
     total_cost = 0
     food_count = 0
 
-    recipe_foods.each do |food_recipe|
+    recipe_foods.includes(:food).each do |food_recipe|
       total_cost += food_recipe.quantity * food_recipe.food.price
       food_count += 1
     end

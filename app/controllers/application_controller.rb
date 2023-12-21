@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   include CanCan::ControllerAdditions
-  load_and_authorize_resource
   before_action :set_ability
   protect_from_forgery with: :exception
   before_action :update_allowed_parameters, if: :devise_controller?

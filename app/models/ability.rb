@@ -12,5 +12,7 @@ class Ability
       can %i[destroy create edit update], RecipeFood do |recipe_food|
         recipe_food.recipe.user_id == @user.id
       end
+      # can %i[destroy], User, user_id: @user.id
+      # can :destroy, :user_session
   end
 end

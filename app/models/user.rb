@@ -26,7 +26,7 @@ class User < ApplicationRecord
     required_food_quantities = Hash.new(0)
 
     recipes.each do |recipe|
-      recipe.recipe_foods.each do |recipe_food|
+      recipe.recipe_foods.includes(:food).each do |recipe_food|
         required_food_quantities[recipe_food.food] += recipe_food.quantity
       end
     end
