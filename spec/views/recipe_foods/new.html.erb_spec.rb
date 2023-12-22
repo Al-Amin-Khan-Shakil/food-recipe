@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "recipe_foods/new", type: :feature do
+RSpec.describe 'recipe_foods/new', type: :feature do
   before(:each) do
     @user = User.create!(id: 1,
                          name: 'Alice',
@@ -14,7 +14,7 @@ RSpec.describe "recipe_foods/new", type: :feature do
                              cooking_time: 30,
                              preparation_time: 15,
                              public: true)
-    
+
     Food.create!(name: 'Banana', measurement_unit: 'kg', price: 10, quantity: 20, user_id: @user.id)
 
     visit new_user_session_path
@@ -33,16 +33,14 @@ RSpec.describe "recipe_foods/new", type: :feature do
   end
 
   scenario 'creates a new recipe food' do
-    food = @user.foods.create!(name: 'Apple', measurement_unit: 'kg', price: 25, quantity: 10)
+    @user.foods.create!(name: 'Apple', measurement_unit: 'kg', price: 25, quantity: 10)
 
     visit new_recipe_recipe_food_path(@recipe)
 
     fill_in 'recipe_food_quantity', with: 2
-    find("#recipe_food_food_id option", text: "Apple").select_option
+    find('#recipe_food_food_id option', text: 'Apple').select_option
 
     click_button 'Create Recipe Food'
-
-    save_and_open_page
 
     expect(page).to have_content('Recipe Food was successfully created.')
     expect(page).to have_content('2')

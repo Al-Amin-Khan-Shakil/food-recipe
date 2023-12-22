@@ -9,11 +9,11 @@ RSpec.feature 'Recipes index page', type: :feature do
                          confirmed_at: Time.now)
 
     @public_recipe = Recipe.create(user_id: @user.id,
-                                  name: 'Public Recipe',
-                                  description: 'A public recipe',
-                                  cooking_time: 30,
-                                  preparation_time: 20,
-                                  public: true)
+                                   name: 'Public Recipe',
+                                   description: 'A public recipe',
+                                   cooking_time: 30,
+                                   preparation_time: 20,
+                                   public: true)
 
     visit new_user_session_path
     fill_in 'Email', with: @user.email

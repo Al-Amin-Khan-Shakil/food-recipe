@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "foods/index", type: :feature do
+RSpec.describe 'foods/index', type: :feature do
   before(:each) do
     @user = User.create!(id: 2,
                          name: 'becky',

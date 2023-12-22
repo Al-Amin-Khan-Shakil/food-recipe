@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "foods/new", type: :feature do
+RSpec.describe 'foods/new', type: :feature do
   before(:each) do
     @user = User.create!(id: 2,
                          name: 'becky',
@@ -23,18 +23,18 @@ RSpec.describe "foods/new", type: :feature do
     expect(page).to have_field('food_quantity', type: 'text')
     expect(page).to have_button('Add Food', class: 'submit-button')
   end
-  
+
   scenario 'creates a new food' do
     fill_in 'food_name', with: 'Apple'
     fill_in 'food_measurement_unit', with: 'kg'
     fill_in 'food_price', with: 25
     fill_in 'food_quantity', with: 10
-  
+
     click_button 'Add Food'
-  
+
     expect(page).to have_content('Apple')
     expect(page).to have_content('kg')
     expect(page).to have_content('$25')
     expect(page).to have_content('10')
-  end  
+  end
 end
