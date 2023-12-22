@@ -1,0 +1,59 @@
+<section class="recipe-section">
+  <h1 class="recipe-name"> <%= @recipe.name %> </h1>
+  <div class="recipe-details">
+    <div class="details">
+      <p> Preparation Time: <%= @recipe.preparation_time %> </p>
+      <p> Cooking Time: <%= @recipe.cooking_time %> </p>
+      <p> Description: <%= @recipe.description %> </p>
+    </div>
+    <div class="toggle-button-wrapper">
+      <label class="toggle-label">
+        Public:
+      </label>
+      <div class="<%= @recipe.public ? 'togglertwo' : 'togglerone' %>">
+        <%= form_tag(toggle_public_recipe_path(@recipe), method: :patch, id: 'toggle-public-form') do %>
+          <%= submit_tag('', id: 'toggle-public-button') %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="button-section">
+    <%= link_to 'Generate Shopping List', general_shopping_list_path, class: "generat-shopping-list" %>
+    <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "add-ingredient" %>
+  </div>
+  <div class="ingredients">  
+    <table>
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Modify</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe.recipe_foods.each do |recipe_food| %>
+          <tr>
+            <td><%= recipe_food.food.name %></td>
+            <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+            <td> $<%= recipe_food.quantity * recipe_food.food.price %></td>
+            <td><%= link_to 'Modify', edit_recipe_recipe_food_path(@recipe, recipe_food), class: "modify-button" %></td>
+            <td><%= button_to 'Delete', recipe_recipe_food_path(@recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class: "ingre-delete-button" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>  
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const togglePublicButton = document.getElementById('toggle-public-button');
+    const togglePublicForm = document.getElementById('toggle-public-form');
+
+    togglePublicButton.addEventListener('click', function() {
+      togglePublicForm.submit();
+    });
+  });
+</script>

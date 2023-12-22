@@ -1,0 +1,32 @@
+<h2 class="new-recipe">New Recipe</h2>
+
+<%= form_with(model: @recipe, url: recipes_path, method: :post, class: 'recipe-form') do |form| %>
+  <div class="recipe-form-section">
+    <%= form.label :name, class: 'recipe-form-label' %>
+    <%= form.text_field :name, class: 'recipe-form-input' %>
+  </div>
+
+  <div class="recipe-form-section">
+    <%= form.label :preparation_time, class: 'recipe-form-label' %>
+    <%= form.text_field :preparation_time, class: 'recipe-form-input' %>
+  </div>
+
+  <div class="recipe-form-section">
+    <%= form.label :cooking_time, class: 'recipe-form-label' %>
+    <%= form.text_field :cooking_time, class: 'recipe-form-input' %>
+  </div>
+
+  <div class="recipe-form-section">
+    <%= form.label :description, class: 'recipe-form-label' %>
+    <%= form.text_area :description, class: 'recipe-form-input' %>
+  </div>
+
+  <div class="recipe-form-section">
+    <%= form.label :public, class: 'recipe-form-label' %>
+    <%= form.check_box :public, class: 'recipe-form-checkbox' %>
+  </div>
+
+  <div class="recipe-form-section">
+    <%= form.submit 'Create Recipe', class: 'recipe-form-submit' %>
+  </div>
+<% end %>
