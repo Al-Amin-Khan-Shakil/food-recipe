@@ -15,8 +15,8 @@
     <% @shopping_list[:missing_food_quantities].each do |food, info| %>
         <tr>
             <td class="border-remover border-top-remover"><%=info[:food_name]%></td>
-            <td class="border-remover border-top-remover">$<%=info[:total_cost]%></td>
             <td class="border-remover border-top-remover"><%=info[:missing_quantity]%></td>
+            <td class="border-remover border-top-remover">$<%=info[:total_cost]%></td>
         </tr>
     <%end%>
 

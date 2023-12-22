@@ -9,10 +9,12 @@
     <div class="toggle-button-wrapper">
       <label class="toggle-label">
         Public:
+      </label>
+      <div class="<%= @recipe.public ? 'togglertwo' : 'togglerone' %>">
         <%= form_tag(toggle_public_recipe_path(@recipe), method: :patch, id: 'toggle-public-form') do %>
           <%= submit_tag('', id: 'toggle-public-button') %>
         <% end %>
-      </label>
+      </div>
     </div>
   </div>
   <div class="button-section">
