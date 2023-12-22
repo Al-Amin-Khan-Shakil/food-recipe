@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "recipes/new", type: :feature do
+RSpec.describe 'recipes/new', type: :feature do
   before(:each) do
     @user = User.create!(id: 2,
                          name: 'becky',
