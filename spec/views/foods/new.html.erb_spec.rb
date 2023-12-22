@@ -18,7 +18,8 @@ RSpec.describe 'foods/new', type: :feature do
   scenario 'displays new food form' do
     expect(page).to have_content('New Food')
     expect(page).to have_field('food_name', type: 'text')
-    expect(page).to have_field('food_measurement_unit', type: 'text')
+    expect(page).to have_select('food_measurement_unit',
+                                options: ['Select a category...', 'gram', 'ounce', 'liter', 'kg', 'pound'])
     expect(page).to have_field('food_price', type: 'text')
     expect(page).to have_field('food_quantity', type: 'text')
     expect(page).to have_button('Add Food', class: 'submit-button')
@@ -26,7 +27,7 @@ RSpec.describe 'foods/new', type: :feature do
 
   scenario 'creates a new food' do
     fill_in 'food_name', with: 'Apple'
-    fill_in 'food_measurement_unit', with: 'kg'
+    select 'kg', from: 'food_measurement_unit'
     fill_in 'food_price', with: 25
     fill_in 'food_quantity', with: 10
 
