@@ -36,7 +36,7 @@ class User < ApplicationRecord
     user_food_quantities = Hash.new(0)
     recipe_foods.each do |user_recipe_food|
       if foods.include?(user_recipe_food.food)
-        user_food_quantities[user_recipe_food.food] += user_recipe_food.food.quantity
+        user_food_quantities[user_recipe_food.food] = user_recipe_food.food.quantity
         puts "user_food:#{user_recipe_food.food.name}, quantity:#{user_recipe_food.food.quantity}"
       end
     end
