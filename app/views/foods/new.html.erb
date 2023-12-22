@@ -2,19 +2,19 @@
   <h2 class="form-title">New Food</h2>
   <%= form_with model: food, url: foods_url, method: :post, local: true, scope: :food, class: "food-form" do |f| %>
     <div class="form-item">
-      <%= f.label :Name, class: "label-name" %><br>
+      <%= f.label :name, class: "label-name" %><br>
       <%= f.text_field :name, class: "input-name" %>
     </div>
     <div class="form-item">
-      <%= f.label :Measurement_unit, class: "label-measurement-unit" %><br>
-      <%= f.text_field :measurement_unit, class: "input-measurement-unit" %>
+      <%= f.label :measurement_unit, class: "label-measurement-unit" %><br>
+      <%= f.select :measurement_unit, options_for_select(['gram', 'ounce', 'liter', 'kg','pound']), { prompt: 'Select a category...' }, class: "input-measurement-unit" %>
     </div>
     <div class="form-item">
-      <%= f.label :Price, class: "label-price" %><br>
+      <%= f.label :price, class: "label-price" %><br>
       <%= f.text_field :price, class: "input-price" %>
     </div>
     <div class="form-item">
-      <%= f.label :Quantity, class: "label-quantity" %><br>
+      <%= f.label :quantity, class: "label-quantity" %><br>
       <%= f.text_field :quantity, class: "input-quantity" %>
     </div>
 
