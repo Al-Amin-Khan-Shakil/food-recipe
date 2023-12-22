@@ -17,7 +17,7 @@ class FoodsController < ApplicationController
           flash[:success] = 'Food saved successfully'
           redirect_to foods_url
         else
-          flash.now[:error] = 'Error: Food could not be saved'
+          flash.now[:notice] = "Error: Food could not be saved. #{@food.errors.full_messages.join('. ')}"
           render :new, locals: { food: @food }
         end
       end

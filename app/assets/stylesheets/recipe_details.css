@@ -63,10 +63,6 @@
   transition: 0.3s;
 }
 
-#toggle-public-form {
-  display: block;
-}
-
 .button-section {
   margin-bottom: 20px;
   display: flex;
@@ -129,4 +125,25 @@ th {
 
 .ingre-delete-button {
   background-color: #f44336;
+}
+
+.togglerone {
+  width: 80px;
+  background: grey;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.togglertwo {
+  width: 80px;
+  background: green;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#toggle-public-form {
+  display: block;
+  height: 20px;
 }
