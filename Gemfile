@@ -53,6 +53,10 @@ group :development, :test do
 
   # This gem is used to run the rspec to do testing
   gem 'rspec-rails'
+  # gem capybara
+  gem 'capybara'
+  # gem webdriver
+  gem 'webdriver'
 end
 
 group :development do
@@ -68,7 +72,7 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
+  # gem 'capybara'
   gem 'selenium-webdriver'
 end
 
