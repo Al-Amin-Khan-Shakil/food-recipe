@@ -18,7 +18,7 @@ RSpec.describe "foods/index", type: :feature do
     visit foods_path
   end
 
-  scenario 'displays user\'s recipes with remove button' do
+  scenario 'displays user\'s foods with delete button' do
     expect(page).to have_content(@food1.name)
     expect(page).to have_content(@food2.name)
     expect(page).to have_content(@food1.price)
